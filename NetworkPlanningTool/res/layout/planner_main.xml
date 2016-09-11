@@ -1,0 +1,281 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".PlannerActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/HorizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/newButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleNewFileClick"
+                android:src="@drawable/new_icon" />
+
+            <ImageButton
+                android:id="@+id/openButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleOpenFileClick"
+                android:src="@drawable/open" />
+
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleSaveClick"
+                android:src="@drawable/save" />
+
+            <ImageButton
+                android:id="@+id/attachButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleImportImage"
+                android:src="@drawable/attach" />
+
+            <ZoomControls
+                android:id="@+id/zoomControls1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/undoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/undo2" />
+
+            <ImageButton
+                android:id="@+id/redoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/redo2" />
+
+            <ImageButton
+                android:id="@+id/screenshotButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleScreenshot"
+                android:src="@drawable/screenshot" />
+
+            <ImageButton
+                android:id="@+id/aboutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/info" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageButton"
+                android:onClick="handleLinkingConfig"
+                android:src="@drawable/linking"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/HorizontalScrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/HorizontalScrollView1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/designButton"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:onClick="onMainFlipClick"
+                android:tag="design"
+                android:text="@string/requirementsText"
+                android:textColor="@color/toggle_text_color"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/parametersButton"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:onClick="onMainFlipClick"
+                android:tag="parameters"
+                android:text="@string/parametersText"
+                android:textColor="@color/toggle_text_color"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/toolsButton"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:onClick="onMainFlipClick"
+                android:tag="tools"
+                android:text="@string/toolsText"
+                android:textColor="@color/toggle_text_color"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/resultsButton"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:onClick="onMainFlipClick"
+                android:tag="results"
+                android:text="@string/resultsText"
+                android:textColor="@color/toggle_text_color"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.ugent.networkplanningtool.layout.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/infoInfoText"
+        android:layout_below="@+id/HorizontalScrollView2"
+        android:layout_toLeftOf="@+id/scrollView1"
+        android:background="@android:color/white" />
+
+    <com.ugent.networkplanningtool.layout.components.MyScrollBar
+        android:id="@+id/myScrollBar1"
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:layout_alignBottom="@+id/drawingView"
+        android:layout_alignLeft="@+id/drawingView"
+        android:layout_alignRight="@+id/drawingView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <com.ugent.networkplanningtool.layout.components.MyScrollBar
+        android:id="@+id/myScrollBar2"
+        android:layout_width="16dp"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/drawingView"
+        android:layout_alignRight="@+id/drawingView"
+        android:layout_alignTop="@+id/drawingView"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/HorizontalScrollView2"
+        android:measureAllChildren="false"
+        android:fillViewport="true">
+
+        <ViewFlipper
+            android:id="@+id/mainFlipper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:measureAllChildren="false">
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/design_view" />
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                layout="@layout/parameters_view" />
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                layout="@layout/tools_view" />
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                layout="@layout/results_view" />
+        </ViewFlipper>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/importImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/HorizontalScrollView1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/HorizontalScrollView1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ugent" />
+
+    <TextView
+        android:id="@+id/infoInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/locationText"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1"
+        android:text="Location on screen"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@id/infoInfoText"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text=":" />
+
+    <TextView
+        android:id="@+id/fileNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/coordinatesTextView"
+        android:layout_toRightOf="@id/infoInfoText"
+        android:paddingLeft="10dp"
+        android:text="Coordinates"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/coordinatesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fileNameText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/fileNameText"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:text=":"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/drawingView"
+        android:layout_below="@id/drawingView"
+        android:layout_toRightOf="@id/fileNameText"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logos" />
+
+</RelativeLayout>

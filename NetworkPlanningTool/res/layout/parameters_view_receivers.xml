@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ugent.networkplanningtool"
+    android:id="@+id/receiversLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="receivers">
+
+    <Spinner
+        android:id="@+id/receiversSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/wifiCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="WiFi"
+        android:enabled="false" />
+
+    <CheckBox
+        android:id="@+id/sensonCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensor"
+        android:enabled="false" />
+
+    <CheckBox
+        android:id="@+id/threeGCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3G"
+        android:enabled="false" />
+
+    <CheckBox
+        android:id="@+id/fourGCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4G"
+        android:enabled="false" />
+
+    <com.ugent.networkplanningtool.layout.components.MySeekBar
+        android:id="@+id/elevationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:minValue="1"
+        app:maxValue="4"
+        app:defaultValue="1"
+        app:stepSize="0.2"
+        app:unitType="m"
+        app:title="Elevation" />
+
+    <com.ugent.networkplanningtool.layout.components.MySeekBar
+        android:id="@+id/receiverGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:minValue="0.2"
+        app:maxValue="2"
+        app:defaultValue="2"
+        app:stepSize="0.2"
+        app:unitType="m"
+        app:title="Grid Size" />
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="afiledialog">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/aFileDialog/bin/afiledialog.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

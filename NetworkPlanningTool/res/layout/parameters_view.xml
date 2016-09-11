@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:tag="parameters">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/recieversButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onParametersFlipClick"
+            android:tag="receivers"
+            android:text="Receivers"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:id="@+id/marginsButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onParametersFlipClick"
+            android:tag="margins"
+            android:text="Margins"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:id="@+id/algorithmsButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onParametersFlipClick"
+            android:tag="algorithms"
+            android:text="Algorithms"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:id="@+id/generatedAPsButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onParametersFlipClick"
+            android:tag="generatedaps"
+            android:text="Generated APs"
+            android:textColor="@color/toggle_text_color" />
+
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/parametersFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:measureAllChildren="false">
+
+        <com.ugent.networkplanningtool.layout.parameters.ReceiversView
+            android:id="@+id/receiversView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="receivers">
+
+        </com.ugent.networkplanningtool.layout.parameters.ReceiversView>
+
+        <com.ugent.networkplanningtool.layout.parameters.MarginsView
+            android:id="@+id/marginsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="margins">
+
+        </com.ugent.networkplanningtool.layout.parameters.MarginsView>
+
+        <com.ugent.networkplanningtool.layout.parameters.AlgorithmsView
+            android:id="@+id/algorithmsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="algorithms">
+
+        </com.ugent.networkplanningtool.layout.parameters.AlgorithmsView>
+
+        <com.ugent.networkplanningtool.layout.parameters.GeneratedAPsView
+            android:id="@+id/generatedAPsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="generatedaps">
+
+        </com.ugent.networkplanningtool.layout.parameters.GeneratedAPsView>
+    </ViewFlipper>
+
+</LinearLayout>

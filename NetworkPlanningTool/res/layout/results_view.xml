@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:tag="results">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/renderDataButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onResultsFlipClick"
+            android:tag="@string/renderDataText"
+            android:text="@string/renderDataText"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:id="@+id/visualOptionsButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onResultsFlipClick"
+            android:tag="@string/visualOptionsText"
+            android:text="@string/visualOptionsText"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:id="@+id/exportRawDataButton"
+            style="@style/MyButton"
+            android:layout_width="fill_parent"
+            android:onClick="onResultsFlipClick"
+            android:tag="@string/exportDataText"
+            android:text="@string/exportDataText"
+            android:textColor="@color/toggle_text_color" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:text="@string/measureText"
+            android:onClick="onResultsFlipClick"
+            android:tag="@string/measureText"
+            android:id="@+id/measureButton"
+            style="@style/MyButton"
+            android:textColor="@color/toggle_text_color" />
+
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/resultsFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:measureAllChildren="false">
+
+        <com.ugent.networkplanningtool.layout.results.RenderDataView
+            android:id="@+id/renderDataView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="@string/renderDataText"></com.ugent.networkplanningtool.layout.results.RenderDataView>
+
+        <com.ugent.networkplanningtool.layout.results.VisualOptionsView
+            android:id="@+id/visualOptionsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="@string/visualOptionsText"></com.ugent.networkplanningtool.layout.results.VisualOptionsView>
+
+        <com.ugent.networkplanningtool.layout.results.ExportRawDataView
+            android:id="@+id/exportRawDataView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="@string/exportDataText"></com.ugent.networkplanningtool.layout.results.ExportRawDataView>
+
+        <com.ugent.networkplanningtool.layout.results.MeasureView
+            android:id="@+id/measureMeasureView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="@string/measureText"></com.ugent.networkplanningtool.layout.results.MeasureView>
+
+    </ViewFlipper>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ugent.networkplanningtool"
+    android:id="@+id/marginsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="margins">
+
+    <com.ugent.networkplanningtool.layout.components.MySeekBar
+        android:id="@+id/interferenceMarginView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:minValue="0"
+        app:maxValue="10"
+        app:defaultValue="0"
+        app:stepSize="1"
+        app:unitType="dB"
+        app:title="Interference Margin" />
+
+    <com.ugent.networkplanningtool.layout.components.MySeekBar
+        android:id="@+id/shadowingMarginView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:minValue="0"
+        app:maxValue="20"
+        app:defaultValue="7"
+        app:stepSize="1"
+        app:unitType="dB"
+        app:title="Shadowing Margin" />
+
+    <com.ugent.networkplanningtool.layout.components.MySeekBar
+        android:id="@+id/fadeMarginView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:minValue="0"
+        app:maxValue="20"
+        app:defaultValue="5"
+        app:stepSize="1"
+        app:unitType="dB"
+        app:title="Fade Margin" />
+
+</LinearLayout>

@@ -1,0 +1,235 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".LocalisationActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/HorizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <ImageButton
+                android:id="@+id/openButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleOpenFileClick"
+                android:src="@drawable/open" />
+
+            <ImageButton
+                android:id="@+id/screenshotButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleScreenshot"
+                android:src="@drawable/screenshot" />
+
+            <ImageButton
+                android:id="@+id/logButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleOpenLog"
+                android:src="@drawable/log" />
+
+            <ImageButton
+                android:id="@+id/convertButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:onClick="handleConvert"
+                android:src="@drawable/convert" />
+
+            <ZoomControls
+                android:id="@+id/zoomControls1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/NavigateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="  Navigate to: "/>
+
+            <Spinner
+                android:id="@+id/NavigateTo"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+             />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/importImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/HorizontalScrollView1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/HorizontalScrollView1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ugent" />
+
+    <com.ugent.networkplanningtool.layout.LocalisationView
+        android:id="@+id/localisationView"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/infoInfoText"
+        android:layout_below="@+id/HorizontalScrollView1"
+        android:layout_toLeftOf="@+id/scrollView1"
+        android:background="@android:color/white" />
+
+    <com.ugent.networkplanningtool.layout.components.MyScrollBar
+        android:id="@+id/myScrollBar1"
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:layout_alignBottom="@+id/localisationView"
+        android:layout_alignLeft="@+id/localisationView"
+        android:layout_alignRight="@+id/localisationView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <com.ugent.networkplanningtool.layout.components.MyScrollBar
+        android:id="@+id/myScrollBar2"
+        android:layout_width="16dp"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/localisationView"
+        android:layout_alignRight="@+id/localisationView"
+        android:layout_alignTop="@+id/localisationView"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/HorizontalScrollView1"
+        android:fillViewport="true"
+        android:measureAllChildren="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <ImageButton
+                        android:id="@+id/locationButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:onClick="flip"
+                        android:src="@drawable/localisation"
+                        android:tag="localisation" />
+
+                    <ImageButton
+                        android:id="@+id/navigationButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:onClick="flip"
+                        android:src="@drawable/fingerprint"
+                        android:tag="fingerprint" />
+
+                    <ImageButton
+                        android:id="@+id/measureButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:onClick="flip"
+                        android:src="@drawable/measure"
+                        android:tag="measure" />
+                </TableRow>
+            </TableLayout>
+
+            <ViewFlipper
+                android:id="@+id/testFlipper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:measureAllChildren="false">
+
+                <com.ugent.networkplanningtool.layout.design.LocateView
+                    android:id="@+id/locateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ugent.networkplanningtool.layout.design.FingerprintView
+                    android:id="@+id/navigationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ugent.networkplanningtool.layout.design.MeasureView
+                    android:id="@+id/measureView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ViewFlipper>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/infoInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/locationText"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1"
+        android:text="Location on screen"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@id/infoInfoText"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text=":" />
+
+    <TextView
+        android:id="@+id/fileNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/coordinatesTextView"
+        android:layout_toRightOf="@id/infoInfoText"
+        android:paddingLeft="10dp"
+        android:text="Coordinates"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/coordinatesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fileNameText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/fileNameText"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:text=":"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/localisationView"
+        android:layout_below="@id/localisationView"
+        android:layout_toRightOf="@id/fileNameText"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logos" />
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/doorsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="doors" >
+
+    <TextView
+        android:id="@+id/materialText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/materialText"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RadioGroup
+        android:id="@+id/materialRadioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/thicknessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thicknessText"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RadioGroup
+        android:id="@+id/thicknessRadioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/snapToText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/snapToText"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RadioGroup
+        android:id="@+id/snapToRadioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/stopDrawingButton"
+        style="@style/MyButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="handleStopDrawing"
+        android:text="@string/stopDrawingText" />
+
+</LinearLayout>
